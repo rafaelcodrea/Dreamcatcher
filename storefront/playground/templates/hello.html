@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dreamcatcher</title>
+    <style>
+      #dream-description {
+        width: 80%;
+        height: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    
+    <img src="images/p11.jpg" alt="Dreamcatcher">
+    <main>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <label for="dream-description">Dream Description:</label>
+        <br>
+        <textarea id="dream-description" name="dream-description"></textarea>
+        <br>
+        <label for="duration">Duration:</label>
+        <input type="range" id="duration" name="duration" min="1" max="5" list="duration-metrics">
+        <datalist id="duration-metrics">
+          <option value="1">
+          <option value="2">
+          <option value="3">
+          <option value="4">
+          <option value="5">
+        </datalist>
+        <br>
+        <label for="stress-level">Stress Level:</label>
+        <input type="range" id="stress_level" name="stress_level" min="1" max="5" list="stress-level-metrics">
+        <datalist id="stress-level-metrics">
+          <option value="1">
+          <option value="2">
+          <option value="3">
+          <option value="4">
+          <option value="5">
+        </datalist>
+        <br>
+        <label for="energy">Energy:</label>
+        <input type="range" id="energy" name="energy" min="1" max="5" list="energy-metrics">
+        <datalist id="energy-metrics">
+          <option value="1">
+          <option value="2">
+          <option value="3">
+          <option value="4">
+          <option value="5">
+        </datalist>
+        <br>
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+  </body>
+</html>

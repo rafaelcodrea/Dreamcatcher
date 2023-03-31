@@ -10,6 +10,7 @@ from .forms import DreamForm
 
 
 
+
 def index(request):
     if request.method == 'POST':
         form = DreamForm(request.POST)
@@ -20,9 +21,10 @@ def index(request):
             energy = request.POST['energy']
             dream = Dream(description=description, duration=duration, stress_level=stress_level, energy=energy)
             dream.save()
-            return render(request, 'dreamcatcher/thankyou.html')
-    return render(request, 'dreamcatcher/index.html')
+            return render(request, 'hello.html')
+    return render(request, 'hello.html')
 
 
 def say_hello(request):
-    return render(request, 'hello.html', {'name': 'Rafael'})
+    return render(request, 'hello.html')
+    

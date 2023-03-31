@@ -3,5 +3,5 @@ from . import views
 
 #URL configuration
 urlpatterns = [
-    path('start/',views.say_hello)
+    path('start/',views.index)
 ]

@@ -5,21 +5,21 @@
     <style>
       #dream-description {
         width: 80%;
-        height: 150px;
+        height: 200px;
       }
     </style>
   </head>
   <body>
-    
-    
-    <img src="images/p11.jpg" alt="Dreamcatcher">
+    <header>
+      <h1 style="font-family: cursive;">Dreamcatcher</h1>
+    </header>
     <main>
-    <form method="POST">
+      <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <label for="dream-description">Dream Description:</label>
+        <label for="description">Dream Description:</label>
         <br>
-        <textarea id="dream-description" name="dream-description"></textarea>
+        <textarea id="description" name="description" rows="4" cols="50"></textarea>
         <br>
         <label for="duration">Duration:</label>
         <input type="range" id="duration" name="duration" min="1" max="5" list="duration-metrics">
@@ -52,7 +52,10 @@
         </datalist>
         <br>
         <button type="submit">Submit</button>
-      </form>
+
+        <canvas id="duration-chart" width="400" height="400"></canvas>
+      
+    </form>
     </main>
   </body>
 </html>
